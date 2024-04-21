@@ -25,6 +25,7 @@ export async function login(formData: FormData) {
 
   console.log('Result', { result });
   revalidatePath('/');
+  redirect('/')
 }
 
 // SIGN UP SUCCESS
