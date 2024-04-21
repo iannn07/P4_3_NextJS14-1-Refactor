@@ -7,6 +7,7 @@
         "hookform",
         "signup",
         "Supabase",
+        "unvote",
         "upvote"
     ],
     "ignoreWords": [],

@@ -1,10 +1,18 @@
+import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
 
 export default function Home() {
   return (
     <>
-      <h1 className='text-3xl font-bold'>Hi Supabase!</h1>
+      <Image
+        src='/Home.png'
+        alt='Next.js Logo'
+        className='mb-10 mt-20 rounded-xl'
+        width={400}
+        height={400}
+        priority
+      />
+      <h1 className='text-6xl font-bold'>What&apos;s up brother?</h1>
       <h2 className='text-xl m-5'>
         Click the following link to see the difference of your DB
       </h2>
@@ -16,12 +24,14 @@ export default function Home() {
           <Link href='/security'>Secured Page</Link>
         </li>
         <li>
+          <Link href='/views'>Views</Link>
+        </li>
+        <li>
           <Link href='/article'>Article</Link>
         </li>
         <li>
           <Link href='/upvote'>Upvote</Link>
         </li>
-        <li></li>
       </ul>
     </>
   );

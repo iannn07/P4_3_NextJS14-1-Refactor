@@ -6,6 +6,7 @@ import createSupabaseClient, {
 import { revalidatePath } from 'next/cache';
 import { redirect } from 'next/navigation';
 
+// LOGIN SUCCESS
 export async function login(formData: FormData) {
   const supabase = await createSupabaseClient();
 
@@ -25,7 +26,7 @@ export async function login(formData: FormData) {
 
   console.log('Result', { result });
   revalidatePath('/');
-  redirect('/')
+  redirect('/');
 }
 
 // SIGN UP SUCCESS
@@ -57,18 +58,14 @@ export async function signup(formData: FormData) {
   redirect('/');
 }
 
+// READ USER SESSION SUCCESS
 export async function readUserSession() {
   const supabase = await createSupabaseClient();
 
-  const {
-    data: { session },
-    error,
-  } = await supabase.auth.getSession();
-  console.log('Session', { session, error });
-
-  return await supabase.auth.getSession();
+  return supabase.auth.getSession();;
 }
 
+// LOG OUT SUCCESS
 export async function logout() {
   console.log('Logout');
   const supabase = await createSupabaseClient();
@@ -77,4 +74,5 @@ export async function logout() {
     console.log(JSON.stringify(error));
   }
   revalidatePath('/auth-server');
+  redirect('/auth-server');
 }
