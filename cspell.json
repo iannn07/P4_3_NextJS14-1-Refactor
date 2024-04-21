@@ -4,11 +4,10 @@
     "dictionaryDefinitions": [],
     "dictionaries": [],
     "words": [
-        "nextjs",
-        "rootsupabase",
-        "Supa",
-        "SUPABASE",
-        "Upvote"
+        "hookform",
+        "signup",
+        "Supabase",
+        "upvote"
     ],
     "ignoreWords": [],
     "import": []
